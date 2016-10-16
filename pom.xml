@@ -17,6 +17,7 @@
         <guice.version>3.0</guice.version>
         <mockito-all.version>1.9.5</mockito-all.version>
         <rest-assured.version>3.0.1</rest-assured.version>
+        <gson.version>2.7</gson.version>
         <threads>5</threads>
         <defaultsuite>debug.xml</defaultsuite>
     </properties>
@@ -68,14 +69,10 @@
             <version>${rest-assured.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.8</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

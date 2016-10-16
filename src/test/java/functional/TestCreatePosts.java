@@ -9,34 +9,25 @@ import org.testng.annotations.Test;
 import resource.Resource;
 
 import static io.restassured.RestAssured.basePath;
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 /**
  * Created by German on 16.10.2016.
  */
-public class TestPosts extends ApiTestCase {
+public class TestCreatePosts extends ApiTestCase {
     static {
         basePath = Resource.POSTS + "/";
     }
 
-    @DataProvider(name = "success")
-    public static Object[][] success() {
-        return new Object[][]{{"1"}, {"5"}, {"10"}};
-    }
-
-    @DataProvider(name = "failure")
-    public static Object[][] failure() {
-        return new Object[][]{{"A"}, {"-1"}, {"0"}};
-    }
-
-    @Test(dataProvider = "success")
+    @Test
+    @Request
     public void testGetSuccess(String val) {
         Response response = given().when().get(val);
         Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @Test(dataProvider = "failure")
+    @Test
+    @Request
     public void testGetFailure(String val) {
         Response response = given().when().get(val);
         Assert.assertEquals(404, response.getStatusCode());

@@ -3,7 +3,7 @@
 <suite name="Test-Suite">
     <test name="Test GET Posts">
         <classes>
-            <class name="functional.TestPosts"/>
+            <class name="functional.TestGetPosts"/>
         </classes>
     </test>
 </suite>
