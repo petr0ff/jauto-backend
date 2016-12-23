@@ -7,6 +7,5 @@ package configuration;
 public class AutoConfig {
     public final static String EMAIL_RECIPIENTS[] = {"german_petrov@epam.com"};
 
-
 }
 

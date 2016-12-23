@@ -1,10 +1,9 @@
 package functional;
 
 import annotations.Request;
-import core.ApiTestCase;
+import base.ApiTestCase;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import resource.Resource;
 

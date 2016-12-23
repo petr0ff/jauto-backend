@@ -1,13 +1,10 @@
 package functional;
 
 import annotations.Request;
-import core.ApiTestCase;
-import io.restassured.http.ContentType;
+import base.ApiTestCase;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import resource.ContentTypes;
 import resource.Resource;
 import dataproviders.PostsDataProvider;
 
@@ -26,14 +23,18 @@ public class TestGetPosts extends ApiTestCase {
     @Test(dataProvider = "successPosts", dataProviderClass = PostsDataProvider.class)
     @Request
     public void testGetSuccess(String val) {
+        logInfo("Send GET " + baseURI + basePath + val);
         Response response = given().when().get(val);
+        logInfo("Verity 200 rc");
         Assert.assertEquals(200, response.getStatusCode());
     }
 
     @Test(dataProvider = "failurePosts", dataProviderClass = PostsDataProvider.class)
     @Request
     public void testGetFailure(String val) {
+        logInfo("Send GET " + baseURI + basePath + val);
         Response response = given().when().get(val);
+        logInfo("Verity 404 rc");
         Assert.assertEquals(404, response.getStatusCode());
     }
 }
