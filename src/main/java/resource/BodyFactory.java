@@ -3,8 +3,9 @@ package resource;
 /**
  * Created by German on 16.10.2016.
  */
-public abstract class BodyFactory implements Body {
-    public Body getBody(String contentType){
+public abstract class BodyFactory {
+
+    public static Body getBuilder(String contentType){
         if(contentType == null){
             return null;
         }
