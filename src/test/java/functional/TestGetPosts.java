@@ -6,7 +6,6 @@ import core.utils.ApiUtils;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import resource.ContentTypes;
 import resource.Resource;
 import dataproviders.PostsDataProvider;
 
@@ -33,7 +32,7 @@ public class TestGetPosts extends ApiTestCase {
     }
 
     @Test(dataProvider = "failurePosts", dataProviderClass = PostsDataProvider.class)
-    @Request(contentType = ContentTypes.URL_ENCODED)
+    @Request(contentType = Request.ContentTypes.URL_ENCODED)
     public void testGetFailure(String val) {
         logInfo("Send GET " + baseURI + basePath + val);
         Response response = given().when().get(val);
