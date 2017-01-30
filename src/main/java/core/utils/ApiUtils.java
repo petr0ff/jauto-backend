@@ -1,9 +1,9 @@
 package core.utils;
 
 import annotations.Request;
-import resource.Body;
-import resource.BodyFactory;
-import java.lang.annotation.Annotation;
+import resource.builder.Body;
+import resource.builder.BodyFactory;
+
 import java.lang.reflect.Method;
 
 /**
